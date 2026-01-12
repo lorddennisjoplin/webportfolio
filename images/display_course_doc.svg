@@ -1,0 +1,32 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="480" fill="#e4f0ff"/>
+  
+  <!-- Background elements -->
+  <circle cx="700" cy="380" r="70" fill="#8fa4da" opacity="0.25"/>
+  <circle cx="100" cy="100" r="50" fill="#2171CC" opacity="0.2"/>
+  
+  <!-- Document stack -->
+  <g transform="translate(400, 220)">
+    <!-- Back documents -->
+    <rect x="-150" y="-100" width="300" height="240" rx="15" fill="#8fa4da" opacity="0.4" transform="rotate(-5)"/>
+    <rect x="-150" y="-100" width="300" height="240" rx="15" fill="#8fa4da" opacity="0.6" transform="rotate(3)"/>
+    
+    <!-- Front document -->
+    <rect x="-160" y="-110" width="320" height="260" rx="15" fill="white" filter="drop-shadow(0 4px 12px rgba(33, 113, 204, 0.15))"/>
+    
+    <!-- Book/Course icon -->
+    <rect x="-70" y="-60" width="140" height="105" rx="10" fill="#2171CC"/>
+    <rect x="-64" y="-53" width="128" height="91" rx="6" fill="#e4f0ff"/>
+    <line x1="0" y1="-53" x2="0" y2="38" stroke="#2171CC" stroke-width="4"/>
+    <line x1="-42" y1="-23" x2="42" y2="-23" stroke="#8fa4da" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-42" y1="3" x2="42" y2="3" stroke="#8fa4da" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-42" y1="28" x2="25" y2="28" stroke="#8fa4da" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Calendar element -->
+    <rect x="50" y="55" width="60" height="60" rx="6" fill="#2171CC"/>
+    <rect x="54" y="67" width="52" height="44" rx="4" fill="white"/>
+    <line x1="66" y1="78" x2="66" y2="102" stroke="#8fa4da" stroke-width="2.5"/>
+    <line x1="94" y1="78" x2="94" y2="102" stroke="#8fa4da" stroke-width="2.5"/>
+    <rect x="54" y="58" width="52" height="12" rx="3" fill="#8fa4da"/>
+  </g>
+</svg>

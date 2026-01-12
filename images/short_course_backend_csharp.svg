@@ -1,0 +1,45 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="480" fill="#e4f0ff"/>
+  
+  <!-- Background elements -->
+  <circle cx="100" cy="100" r="65" fill="#8fa4da" opacity="0.3"/>
+  <circle cx="700" cy="380" r="70" fill="#2171CC" opacity="0.2"/>
+  
+  <!-- Main container -->
+  <g transform="translate(400, 240)">
+    <!-- Card background -->
+    <rect x="-180" y="-140" width="360" height="280" rx="20" fill="white" filter="drop-shadow(0 4px 12px rgba(33, 113, 204, 0.15))"/>
+    
+    <!-- C# hexagon icon inspired -->
+    <g transform="translate(0, -25)">
+      <!-- Hexagon -->
+      <path d="M 0 -60 L 52 -30 L 52 30 L 0 60 L -52 30 L -52 -30 Z" fill="#2171CC" stroke="#2171CC" stroke-width="3"/>
+      
+      <!-- Inner hexagon -->
+      <path d="M 0 -50 L 43 -25 L 43 25 L 0 50 L -43 25 L -43 -25 Z" fill="#8fa4da"/>
+      
+      <!-- C# hash symbol -->
+      <g transform="translate(0, 0)">
+        <!-- Vertical lines -->
+        <line x1="-18" y1="-25" x2="-18" y2="25" stroke="#e4f0ff" stroke-width="6" stroke-linecap="round"/>
+        <line x1="18" y1="-25" x2="18" y2="25" stroke="#e4f0ff" stroke-width="6" stroke-linecap="round"/>
+        
+        <!-- Horizontal lines -->
+        <line x1="-30" y1="-10" x2="30" y2="-10" stroke="#e4f0ff" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-30" y1="10" x2="30" y2="10" stroke="#e4f0ff" stroke-width="6" stroke-linecap="round"/>
+      </g>
+      
+      <!-- C letter overlay -->
+      <path d="M 5 -30 Q 25 -30 25 -10 Q 25 10 5 10" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.7"/>
+    </g>
+    
+    <!-- Code brackets decoration -->
+    <g transform="translate(0, 85)">
+      <path d="M -120 -15 L -130 -15 L -140 0 L -130 15 L -120 15" stroke="#8fa4da" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 120 -15 L 130 -15 L 140 0 L 130 15 L 120 15" stroke="#8fa4da" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <!-- C# text -->
+      <text x="0" y="10" font-family="Courier New, monospace" font-size="32" font-weight="bold" fill="#2171CC" text-anchor="middle">C#</text>
+    </g>
+  </g>
+</svg>
