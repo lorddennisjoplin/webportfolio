@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="480" fill="#e4f0ff"/>
+  
+  <!-- Background elements -->
+  <circle cx="650" cy="100" r="65" fill="#2171CC" opacity="0.2"/>
+  <circle cx="150" cy="380" r="70" fill="#8fa4da" opacity="0.25"/>
+  
+  <!-- Main container -->
+  <g transform="translate(400, 240)">
+    <!-- Card background -->
+    <rect x="-180" y="-140" width="360" height="280" rx="20" fill="white" filter="drop-shadow(0 4px 12px rgba(33, 113, 204, 0.15))"/>
+    
+    <!-- Python snake-inspired icon -->
+    <g transform="translate(0, -30)">
+      <!-- Snake body - stylized Python logo inspired -->
+      <g transform="translate(0, 0)">
+        <!-- Top/Blue part -->
+        <path d="M -30 -50 Q -50 -50 -50 -30 L -50 10 Q -50 30 -30 30 L 0 30 L 0 -30 Q 0 -50 -20 -50 Z" fill="#2171CC"/>
+        <circle cx="-35" cy="-35" r="5" fill="#e4f0ff"/>
+        
+        <!-- Bottom/Yellow part (using our palette) -->
+        <path d="M 30 50 Q 50 50 50 30 L 50 -10 Q 50 -30 30 -30 L 0 -30 L 0 30 Q 0 50 20 50 Z" fill="#8fa4da"/>
+        <circle cx="35" cy="35" r="5" fill="#e4f0ff"/>
+        
+        <!-- Connecting middle -->
+        <rect x="-15" y="-30" width="30" height="60" fill="#2171CC" opacity="0.3"/>
+      </g>
+    </g>
+    
+    <!-- Code brackets decoration -->
+    <g transform="translate(0, 85)">
+      <path d="M -120 -15 L -130 -15 L -140 0 L -130 15 L -120 15" stroke="#8fa4da" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 120 -15 L 130 -15 L 140 0 L 130 15 L 120 15" stroke="#8fa4da" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <!-- Python text -->
+      <text x="0" y="10" font-family="Courier New, monospace" font-size="28" font-weight="bold" fill="#2171CC" text-anchor="middle">PYTHON</text>
+    </g>
+  </g>
+</svg>
