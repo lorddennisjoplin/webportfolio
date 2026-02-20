@@ -12,17 +12,17 @@
 				<form @submit.prevent="submitForm">
 					<div class="mb-3">
 						<label for="name" class="form-label">Name</label>
-						<input type="text" v-model="name" class="form-control" id="name">
+						<input type="text" v-model="name" class="form-control" id="name" required>
 					</div>
 
 					<div class="mb-3">
 						<label for="email" class="form-label">Email address</label>
-						<input type="email" v-model="email" class="form-control" id="email" aria-describedby="emailHelp">
+						<input type="email" v-model="email" class="form-control" id="email" aria-describedby="emailHelp" required>
 					</div>
 
 					<div class="form-group">
 						<label class="form-label" for="message">Message</label>
-						<textarea v-model="message" class="form-control" id="message" rows="7"></textarea>
+						<textarea v-model="message" class="form-control" id="message" rows="7" required></textarea>
 					</div>
 
 					<div class="mt-3">
