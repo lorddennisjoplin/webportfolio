@@ -25,9 +25,16 @@
 						<textarea v-model="message" class="form-control" id="message" rows="7"></textarea>
 					</div>
 
+					<div class="mt-3">
+						<div ref="recaptchaContainer"></div>
+					</div>
+
 					<button type="submit" class="btn btn-primary mt-3" :disabled="isLoading">
 						{{ isLoading ? 'Sending...' : 'Submit' }}
 					</button>
+
+					
+
 				</form>
 			</div>
 		</div>
@@ -35,7 +42,7 @@
 </template>
 
 <script setup>
-	import { ref } from 'vue';
+	import { ref, onMounted, onBeforeMount } from 'vue';
 	import { Notyf } from 'notyf';
 	import 'notyf/notyf.min.css';
 
@@ -53,6 +60,12 @@
 	const isLoading = ref(false);
 
 	const submitForm = async () => {
+
+		if (!recaptchaToken.value) {
+			notyf.error("Please verify that yo're not a robot.")
+			return;
+		}
+
 		isLoading.value = true;
 
 		try {
@@ -92,5 +105,59 @@
 
 			notyf.error('Message not sent.');
 		}
+
+		finally {
+			resetRecaptcha();
+		}
 	}
+
+	const SITE_KEY = '6LfMsHEsAAAAAFjpIsVpc9xHHcbowVi-nQpVq9QO';
+	// const SITE_SECRET_KEY = '6LfMsHEsAAAAADZ5w2gnYzgn_peL5ul5qJQRTjB8';
+
+	const recaptchaContainer = ref(null);
+	const recaptchaWidgetId = ref(null);
+	const recaptchaToken = ref('');
+
+	function onRecaptchaSuccess(token) {
+		recaptchaToken.value = token;
+	}
+
+	function onRecaptchaExpired() {
+		recaptchaToken.value = '';
+	}
+
+	function renderRecaptcha() {
+	  if (!window.grecaptcha) {
+	    console.error('reCAPTCHA not loaded');
+	    return;
+	  }
+
+	  recaptchaWidgetId.value = window.grecaptcha.render(recaptchaContainer.value, {
+	    sitekey: SITE_KEY,
+	    size: 'normal', // or 'compact'
+	    callback: onRecaptchaSuccess,
+	    'expired-callback': onRecaptchaExpired,
+	  });
+	}
+
+	function resetRecaptcha() {
+	  if (recaptchaWidgetId.value !== null) {
+	    window.grecaptcha.reset(recaptchaWidgetId.value);
+	    recaptchaToken.value = '';
+	  }
+	}
+
+	onMounted(() => {
+		const interval = setInterval(() => {
+			if (window.grecaptcha && window.grecaptcha.render) {
+				renderRecaptcha();
+				clearInterval(interval);
+			}
+		}, 100);
+
+		onBeforeMount(() => {
+			clearInterval(interval);
+		})
+	});
+
 </script>
