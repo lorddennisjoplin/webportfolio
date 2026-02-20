@@ -62,7 +62,7 @@
 	const submitForm = async () => {
 
 		if (!recaptchaToken.value) {
-			notyf.error("Please verify that yo're not a robot.")
+			notyf.error("Verify that you're not a robot.")
 			return;
 		}
 
